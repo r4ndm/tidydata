@@ -1,19 +1,20 @@
 
+The goal of this project is to tidy raw data for further analysis. Raw data in this project is from experiments for wearable computing. 
 This code book describes the input data, steps to process the data and the processed output data. 
-This project is to tidy raw data for further analysis. The raw data in this project is from experiments for wearable computing.
 
-## Raw data
+
+## Input data
 The raw data and the details of the raw data and variables are available here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 ## Processing
 The steps used to process the raw data in this projects are:
-* Read subject and activity details from test and train data files
-* Read the test data from test and train data files (X_test.txt, X_train.txt)
-* Read feature details from feature.txt
-* Combine test and train datasets into a single dataset
+* Read subject and activity details from test and training data files. All datafiles were loaded using read.table
+* Read the test data from test and training data files (X_test.txt, X_train.txt)
+* Read feature details from feature.txt. The features names are used as lables for variables in the dataset
+* Combine test and training datasets into a single dataset. The union of the two datasets was done using rbind
 * Add subject and activity variables to the combined dataset
 * Remove all columns except Subject, Activity and mean and standard deviation columns
-* Compute the average of mean and standard deviation columns grouped by Subject and Activity
+* Compute the average of mean and standard deviation columns grouped by Subject and Activity. Average is computed using the mean function
 * Return the resulting dataset as a data frame
 
 ## Variables
@@ -23,7 +24,7 @@ The resulting tidy data (data frame) has the following variables:
 
 The remaining variables are processed values of the corresponding raw data variable. 
 The original raw dataset has 561 different variables measured from the accelerometer and gyroscope of the phone used by the subject. The raw variables
-are mean and standard deviation of 128 readings produced from a 50Hz sampling during a 2.56s periood. The following variables exist in the processed data 
+are mean and standard deviation of 128 readings produced from a 50Hz sampling during a 2.56s period. The variables in the processed data 
 are average values of the corresponding raw data variable.
 
 The complete list of variables in the output data is:

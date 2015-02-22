@@ -27,6 +27,11 @@ The original raw dataset has 561 different variables measured from the accelerom
 are mean and standard deviation of 128 readings produced from a 50Hz sampling during a 2.56s period. The variables in the processed data 
 are average values of the corresponding raw data variable.
 
+Units:
+* Subject, Activity: no units
+* Acc variables: accelaration variables are in standard gravity units 'g'
+* Gyro variables: angular velocity from gyroscope in radians/second
+
 The complete list of variables in the output data is:
 
 	1.                      Subject
